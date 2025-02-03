@@ -1,0 +1,47 @@
+name: CI/CD Pipeline
+
+on:
+    push:
+        branches:
+            - main
+    pull_request:
+        branches:
+            - main
+
+jobs:
+    build-and-test:
+        name: build & Test
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: checkout repository
+              uses: actions/checkout@v4
+
+            - name: set up Node.js
+              uses: actions/setup-node@v3
+              with:
+                node-version: 18
+
+            - name: install dependencies
+              run: npm install
+
+            - name: run tests
+              run: npm test
+
+            - name: build the project
+              run: npm run build
+
+    deploy:
+        name: deploy to vercel
+        needs: build-and-test
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: checkout repository
+              uses: actions/checkout@v4
+
+            - name: install vercel CLI
+              run: npm install -g vercel
+            
+            - name: deploy to vercel
+              run: vercel --prod --token
