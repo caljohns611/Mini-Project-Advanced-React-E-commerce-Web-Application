@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import store from './Redux/Store';
+import { QueryCache, QueryClientProvider } from '@tanstack/react-query';
 import App from './App';
 
+const queryClient = new QueryClient();
+
 ReactDOM.render(
-    <Provider store={store}>
+    <QueryClientProvider client={queryClient}>
         <App />
-    </Provider>,
+    </QueryClientProvider>,
     document.getElementById('root')
 );
