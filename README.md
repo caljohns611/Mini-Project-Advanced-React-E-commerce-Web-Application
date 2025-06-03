@@ -1,8 +1,3 @@
-# React + Vite
+My beginner friendly e-commerce application was created using React, TypeScript, React Query, and Redux Toolkit. It uses the FakeStoreAPI to simulate an online shopping experience. Users can view products, filter them by category, add them to a cart, and simulate a checkout process.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The Features of this app allows users to browse a list of products pulled from an API. Users can filter products by category using a dropdown menu that dynamically fetches category options. Each product can be added to a shopping cart from the listing page. Inside the cart, users can view all added products, remove them individually, and see a live total count and price. The cart data is stored using sessionStorage, so it stays intact even after refreshing the browser. A simulated checkout clears the cart and displays a message confirming the checkout.
