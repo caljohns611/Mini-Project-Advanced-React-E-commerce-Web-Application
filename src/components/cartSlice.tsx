@@ -28,7 +28,7 @@ const cartSlice = createSlice({
             } else {
                 state.items.push({ ...action.payload, count: 1 });
             }
-            sessionStorage.setItme('cart', JSON.stringify(state.items));
+            sessionStorage.setItem('cart', JSON.stringify(state.items));
         },
         
         removeFromCart(state, action: PayloadAction<number>) {
